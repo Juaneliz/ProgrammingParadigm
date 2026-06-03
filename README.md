@@ -14,7 +14,7 @@ This means that functional programming uses only functions as the procedures to 
 Lambda Calculus is  using functions and abstraction to apply procedures without the need of stating variables. Usign elegance in code, we can implement lambda calculus as functional programming by creating complex procedures into simple steps. As represent in the following: " The main ideas are applying a function to an argument and forming functions by abstraction"(The Lambda Calculus (Stanford Encyclopedia of Philosophy), 2023)."
 ## Description
 To develop this paradigm, I will resolve the following problem in CodeForces. The problem chosen is 1077C. Which has the title of Good Array. In this problem it is stated the following. You are given an array of n integers, find all the indices in the array such that after removing the indices. the array becomes good. A condition is that an array is good if there exists an element equal to the sum of all the other elements. There is a following diagram to explain the problem better.
-[! Imagen 1:Diagrama de flujo del problema][Diagram_problem.png]
+![ Imagen 1:Diagrama de flujo del problema][Diagram_problem.png]
 
 
 ## Models
