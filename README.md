@@ -16,11 +16,19 @@ Lambda Calculus is  using functions and abstraction to apply procedures without 
 To develop this paradigm, I will resolve the following problem in CodeForces. The problem chosen is 1077C. Which has the title of Good Array. In this problem it is stated the following. You are given an array of n integers, find all the indices in the array such that after removing the indices. the array becomes good. A condition is that an array is good if there exists an element equal to the sum of all the other elements. There is a following diagram to explain the problem better.
 ![ Imagen 1:Diagrama de flujo del problema](Diagram_problem.png)
 
-
 ## Models
-Explain the logic of your solution in diagram and be specific about how the paradigm is used.
+To develop this solution, functional programming will be fundamental into the implementation of this problem. By using this paradigm we splid the work into five functions. By using recursion we will be able to parse through the array present it and recollect the good indices that an array has. 
+- is-in: This function search through the list to see if an element exists in the array. It parse through the list and searches an element.
+- sum-list: It sums all the elements on the list. It uses an accumulator to save the sum in each step.
+- good?: It verifies the list as good if an element is equal to the sum of all the other elements. This is made by the calculating the total sum with sum-list. If the sum is unpair it is impossible,, if it is pair it looks for sum/2 to exist in the list.
+- remove-at: It returns a new list without an element. It parses through the list to reach the position i. Then it creates a new temporary list without that position.
+- find-nice: <strong>PRIMARY FUNCTION</strong> It parses the indexes from 1 to n. For each one it calls remove-at, to remove that indeces and verify if it is good with good?. If it is, it saves the indeces in cons.
 
-
+Why does the paradigm is used.
+- Recursion
+- Pure functions
+- Function composition
+- Mutable variables.
 ## Implementation
 Implement your solution in a language that supports the programming paradigm.
 
