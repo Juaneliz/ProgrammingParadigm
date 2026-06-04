@@ -49,11 +49,17 @@ The test develop are the following. Creating base cases and worst cases.
 ```
 
 ## Analysis
-Explain the time complexity of your solution.
-Explain what other possible paradigms could have been used and the possible tradeoffs, including time complexities.
+The time complexity of the solution is O(n^2). This is because find-nice iterates through all n indices. Fo each index it calls good?, which calls sum-list and is-in?. Basically by naming find-nice and good. 
 
 ### Differente Possible Solution
 
+In parallel programming, the work is divided among multiple processors that work independently for the same task. The development is simple. Each processor is given the task to check a single index. Each one works simultaneously and finally they merge the results. By this, you have the same solution in a shorter period of time. 
+- You create a pool of processors
+- You divide the work and if they are not working= idle state
+- Each processor checks 1 index
+- All run simultaneously.
+- Merge results
+O(n/p+p). It iuses that time complexity because the processor only looks for one index, so it only parse through the lsit one time. Since they are working simultaneously, the merge is in a simple step.
 ### References.
 - The Lambda Calculus (Stanford Encyclopedia of Philosophy). (2023, July 25). https://plato.stanford.edu/entries/lambda-calculus/
 - Functional Programming Paradigm – All You need to know | LLLNFormatics. (n.d.). https://www.llinformatics.com/blog/functional-programming-paradigm
