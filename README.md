@@ -20,20 +20,33 @@ To develop this paradigm, I will resolve the following problem in CodeForces. Th
 To develop this solution, functional programming will be fundamental into the implementation of this problem. By using this paradigm we splid the work into five functions. By using recursion we will be able to parse through the array present it and recollect the good indices that an array has. 
 - is-in: This function search through the list to see if an element exists in the array. It parse through the list and searches an element.
 - sum-list: It sums all the elements on the list. It uses an accumulator to save the sum in each step.
-- good?: It verifies the list as good if an element is equal to the sum of all the other elements. This is made by the calculating the total sum with sum-list. If the sum is unpair it is impossible,, if it is pair it looks for sum/2 to exist in the list.
+- good?: It verifies the list as good if an element is equal to the sum of all the other elements. This is made by the calculating the total sum with sum-list. If the sum is odd it is impossible, if it is even it looks for sum/2 to exist in the list.
 - remove-at: It returns a new list without an element. It parses through the list to reach the position i. Then it creates a new temporary list without that position.
 - find-nice: <strong>PRIMARY FUNCTION</strong> It parses the indexes from 1 to n. For each one it calls remove-at, to remove that indeces and verify if it is good with good?. If it is, it saves the indeces in cons.
 
-Why does the paradigm is used.
-- Recursion
-- Pure functions
-- Function composition
-- Mutable variables.
+Why does the paradigm is used:
+- Recursion: Instead of loops, each function calls itself to go through the list.
+- Pure functions: No function modify original list. All work goes through new lists and elements through that list.
+- Function composition: Delegation of responsibilities by hierarchy of functions.
+- Immutable Variables: No variable is ever modified.
+
 ## Implementation
-Implement your solution in a language that supports the programming paradigm.
+The language chosen to develop this solution is Dr.Racket. It is used because of the pure language being supportive of the functional programming paradigm. Recursion, immutable data and function composition natively making it ideal for this paradigm.
 
 ## Tests
-Implement and document a set of tests.
+The test develop are the following. Creating base cases and worst cases.
+```racket
+;;Caso Base
+(find-nice '(2 5 1 2 2) 1)
+(find-nice '(8 3 5 2)1)
+(find-nice '(1 2 3)1)
+
+
+;;Peores Casos
+(find-nice '(2 1 2 4 3) 1)
+(find-nice '(1 1 1 1)1)
+(find-nice '(7 3 2) 1)
+```
 
 ## Analysis
 Explain the time complexity of your solution.
